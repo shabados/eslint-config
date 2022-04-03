@@ -94,14 +94,6 @@ module.exports = {
     semi: ['error', 'never'],
     // For the few semi-colons required (e.g. inline array operations), place them at the beginning of the statement
     'semi-style': ['error', 'first'],
-    // StyleSheet classnames to be sorted in ascending order
-    'react-native/sort-styles': [
-      'error',
-      'asc',
-      {
-        ignoreStyleProperties: true,
-      },
-    ],
     // Prefer passing in ES6 default values to function components (ideal solution resolve #113)
     'react/require-default-props': 'off',
     // Prefer arrow functions for all React functional components
