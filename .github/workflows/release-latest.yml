@@ -54,8 +54,8 @@ jobs:
 
       - uses: shabados/actions/publish-npm@release/next
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          npm_token: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GH_BOT_TOKEN }}
+          npm_token: ${{ secrets.NPM_BOT_TOKEN }}
 
   publish-github:
     runs-on: ubuntu-20.04
