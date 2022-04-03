@@ -111,7 +111,13 @@ module.exports = {
   overrides: [
     {
       extends: ['plugin:jest/recommended', 'plugin:jest/style'],
-      files: require('./test-files'),
+      files: [
+        '**/test/**/*.[jt]s?(x)',
+        '**/scripts/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[jt]s?(x)',
+        '**/__mocks__/**/*[.jt]s?(x)',
+        '*.config.js',
+      ],
       env: {
         jest: true,
       },

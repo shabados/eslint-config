@@ -1,3 +1,7 @@
+const {
+  overrides: [testOverrides],
+} = require('.')
+
 module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -52,11 +56,9 @@ module.exports = {
   },
   overrides: [
     {
-      files: require('./test-files'),
-      env: {
-        jest: true,
-      },
+      ...testOverrides,
       rules: {
+        ...testOverrides.rules,
         // In testing, dynamic requires are often required
         '@typescript-eslint/no-var-requires': 'off',
         // Allows destructuring class methods - up to us to determine if it is an issue
