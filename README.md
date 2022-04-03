@@ -16,17 +16,16 @@ Create an ESLint configuration (`.eslintrc`) in your repository. You'll then add
 
 Essentially, there are 2 flavors of configuration that can be referenced:
 
-- `@shabados`
-- `@shabados/typescript`
-- `@shabados/react`
+- `@shabados/eslint-config`
+- `@shabados/eslint-config/typescript`
 
 So, if you've got a TypeScript project, the contents of your `.eslintrc` should contain:
 
 ```
 {
     "extends": [
-      "@shabados",
-      "@shabados/typescript",
+      "@shabados/eslint-config",
+      "@shabados/eslint-config/typescript",
     ]
 }
 ```
