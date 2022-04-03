@@ -1,0 +1,77 @@
+name: Release Latest
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency: release
+
+jobs:
+  prepare:
+    runs-on: ubuntu-20.04
+    needs: checks
+    outputs:
+      release-version: ${{ steps.bump-version.outputs.next }}
+    steps:
+      - uses: shabados/actions/setup-git-identity@release/v2
+        with:
+          user: Shabad OS Bot
+          email: team@shabados.com
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - uses: shabados/actions/bump-version@release/v2
+        id: bump-version
+
+      - uses: shabados/actions/generate-changelog@release/v2
+
+        # .tar to preserve permissions - https://github.com/actions/upload-artifact#maintaining-file-permissions-and-case-sensitive-files
+      - name: Create tar workspace archive to preserve file permissions
+        run: tar -cvf /tmp/workspace.tar .
+
+      - name: Upload workspace
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-workspace
+          path: /tmp/workspace.tar
+
+  publish-npm:
+    runs-on: ubuntu-20.04
+    needs: prepare
+    steps:
+      - name: Download workspace
+        uses: actions/download-artifact@v2
+        with:
+          name: release-workspace
+
+        # .tar to preserve permissions - https://github.com/actions/upload-artifact#maintaining-file-permissions-and-case-sensitive-files
+      - name: Extract tar workspace archive to preserve file permissions
+        run: tar -xvf workspace.tar
+
+      - uses: shabados/actions/publish-npm@release/v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          npm_token: ${{ secrets.NPM_TOKEN }}
+
+  publish-github:
+    runs-on: ubuntu-20.04
+    needs: prepare
+    steps:
+      - name: Download workspace
+        uses: actions/download-artifact@v2
+        with:
+          name: release-workspace
+
+        # .tar to preserve permissions - https://github.com/actions/upload-artifact#maintaining-file-permissions-and-case-sensitive-files
+      - name: Extract tar workspace archive to preserve file permissions
+        run: tar -xvf workspace.tar
+
+      - uses: shabados/actions/publish-github@release/v2
+        with:
+          github_token: ${{ secrets.GH_BOT_TOKEN }}
+          release_version: ${{ needs.prepare.outputs.release-version }}
