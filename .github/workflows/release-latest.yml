@@ -52,7 +52,7 @@ jobs:
       - name: Extract tar workspace archive to preserve file permissions
         run: tar -xvf workspace.tar
 
-      - uses: shabados/actions/publish-npm@release/next
+      - uses: shabados/actions/publish-npm@release/v2
         with:
           github_token: ${{ secrets.GH_BOT_TOKEN }}
           npm_token: ${{ secrets.NPM_BOT_TOKEN }}
