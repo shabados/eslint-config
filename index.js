@@ -107,6 +107,8 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    // Doesn't matter where we'd like to initialise React state in class components
+    'react/state-in-constructor': 'off',
     // Sort imports alphabetically and separate groups with a newline
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
