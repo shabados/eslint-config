@@ -5,6 +5,9 @@ module.exports = {
   globals: {
     JSX: 'readonly',
   },
+  parserOptions: {
+    ecmaVersion: 2022,
+  },
   extends: ['airbnb', 'airbnb/hooks'],
   plugins: ['simple-import-sort'],
   rules: {
