@@ -131,6 +131,8 @@ module.exports = {
         'global-require': 'off',
         // It's useful to not have assertions in smoke/crash tests
         'jest/expect-expect': 'off',
+        // Logging is fine in tests and scripts
+        'no-console': 'off',
       },
     },
   ],
