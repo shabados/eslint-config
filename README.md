@@ -30,4 +30,4 @@ So, if you've got a TypeScript project, the contents of your `.eslintrc` should 
 }
 ```
 
-The `@shabados` flavor is always required, so have this at a minimum.
+The `@shabados/eslint-config` flavor is always required, so have this at a minimum.
