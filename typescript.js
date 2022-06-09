@@ -1,5 +1,5 @@
 const {
-  overrides: [testOverrides],
+  overrides: [testOverrides, ...overrides],
 } = require('.')
 
 module.exports = {
@@ -73,5 +73,6 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
       },
     },
+    ...overrides,
   ],
 }
