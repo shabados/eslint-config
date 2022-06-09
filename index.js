@@ -55,6 +55,8 @@ module.exports = {
         maxBOF: 0,
       },
     ],
+    // Sometimes you want the side-effects that constructing something will cause
+    'no-new': 'off',
     // No unused variables except when prepended with _, to indicate that they're not to be used, but require definition to be valid code
     'no-unused-vars': [
       'error',
@@ -137,5 +139,12 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    {
+      files: ['infrastructure/**/*.[jt]s'],
+      rules: {
+        // Infrastructure packages will be installed and imported as devDependencies
+        'import/no-extraneous-dependencies': 'off',
+      },
+    }
   ],
 }
