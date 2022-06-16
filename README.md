@@ -38,7 +38,7 @@ For example the `.eslintrc` of a TypeScript project would contain:
 
 The easiest way to communicate is via [GitHub issues](https://github.com/shabados/eslint-config/issues). Please search for similar issues regarding your concerns before opening a new issue.
 
-Our intention is to signal a safe open-source community. Please help us foster an atmosphere of kindness, cooperation, and understanding. By participating, you agree to abide by the [Contributor Covenant](https://github.com/shabados/.github/blob/main/CODE_OF_CONDUCT.md).
+Our intention is to signal a safe open-source community. Please help us foster an atmosphere of kindness, cooperation, and understanding. By participating, you agree to abide by the [code of conduct](https://github.com/shabados/.github/blob/main/CODE_OF_CONDUCT.md).
 
 If you have a concern that doesn't warrant opening a GitHub issue, please reach out to us:
 
