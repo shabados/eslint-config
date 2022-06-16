@@ -1,33 +1,47 @@
 # ESLint Config
 
-This repo contains the Shabad OS ESLint config!
+The default ESLint config for Shabad OS.
 
 ## Usage
 
-### Install dependencies
+**Install**
 
-`npm install --save-dev @shabados/eslint-config`
-
-Recommended to use npm 7+ to automatically install the peer-dependencies. If not, be sure to install them yourself via `npx install-peerdeps --dev @shabados/eslint-config`.
-
-### Create ESLint config
-
-Create an ESLint configuration (`.eslintrc`) in your repository. You'll then add the appropriate flavor to the `extends` property inside the configuration file.
-
-Essentially, there are 2 flavors of configuration that can be referenced:
-
-- `@shabados/eslint-config`
-- `@shabados/eslint-config/typescript`
-
-So, if you've got a TypeScript project, the contents of your `.eslintrc` should contain:
-
+```shell
+npm install --save-dev @shabados/eslint-config
 ```
+
+npm 7+ automatically installs peer-dependencies. If using a previous npm version, install them manually via:
+
+```shell
+npx install-peerdeps --dev @shabados/eslint-config
+```
+
+**Configure ESLint**
+
+In your configuration file (e.g. `.eslintrc`), add the appropriate extension(s) from below:
+
+- `@shabados/eslint-config` **(required)**
+- `@shabados/eslint-config/typescript` (optional)
+
+For example the `.eslintrc` of a TypeScript project would contain:
+
+```json
 {
-    "extends": [
-      "@shabados/eslint-config",
-      "@shabados/eslint-config/typescript",
-    ]
+  "extends": [
+    "@shabados/eslint-config",
+    "@shabados/eslint-config/typescript"
+  ]
 }
 ```
 
-The `@shabados/eslint-config` flavor is always required, so have this at a minimum.
+## Community
+
+The easiest way to communicate is via [GitHub issues](https://github.com/shabados/eslint-config/issues). Please search for similar issues regarding your concerns before opening a new issue.
+
+Our intention is to signal a safe open-source community. Please help us foster an atmosphere of kindness, cooperation, and understanding. By participating, you agree to abide by the [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
+
+If you have a concern that doesn't warrant opening a GitHub issue, please reach out to us:
+
+Harjot Singh, Author, Maintainer, Project Lead, and Organization Lead: [@harjot1singh](https://github.com/harjot1singh)
+
+Bhajneet S.K., Committer: [@bhajneet](https://github.com/bhajneet/)
