@@ -53,6 +53,8 @@ module.exports = {
         },
       },
     ],
+    // Can be visually verbose to have every class member separated with a newline
+    "@typescript-eslint/lines-between-class-members": "off"
   },
   overrides: [
     {
