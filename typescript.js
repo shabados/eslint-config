@@ -33,6 +33,19 @@ module.exports = {
         tuples: 'always-multiline',
       },
     ],
+    // @typescript-eslint/indent rules are very broken for some types, so ignoring them makes certain TS-only constructs look nicer
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          "TSUnionType",
+          "TSIntersectionType",
+          "PropertyDefinition[decorators]",
+          "TSTypeParameterInstantiation"
+        ]
+      }
+    ],
     // Let Typescript infer the return types
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     // Sometimes you want to declare a function as async so that it returns a Promisified value
