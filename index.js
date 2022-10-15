@@ -9,7 +9,7 @@ module.exports = {
     ecmaVersion: 2022,
   },
   extends: ['airbnb', 'airbnb/hooks'],
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'workspaces'],
   rules: {
     // Spacing in brackets is consistent and readable
     'array-bracket-spacing': ['error', 'always'],
