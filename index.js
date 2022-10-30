@@ -68,6 +68,8 @@ module.exports = {
     'no-void': 'off',
     // https://eslint.org/docs/rules/no-shadow seems sensible to not have shadow variables, but can get annoying real quick, especially in the case of reducers
     'no-shadow': 'off',
+    // TypeScript would catch this anyway, and it's noisy to add braces to suppress this warning
+    'no-promise-executor-return': 'off',
     // Be consistent about where the object braces go
     'object-curly-newline': [
       'error',
