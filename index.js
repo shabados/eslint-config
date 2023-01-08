@@ -119,13 +119,26 @@ module.exports = {
   },
   overrides: [
     {
+      files: [
+        '*.config.js',
+        '**/scripts/**/*.[jt]s',
+        'dangerfile.[jt]s',
+        'danger/**/*.[jt]s',
+        'infrastructure/**/*.[jt]s',
+      ],
+      rules: {
+        // devDependencies do need to be imported in config/scripts
+        'import/no-extraneous-dependencies': 'off',
+        // Logging is fine in config/scripts
+        'no-console': 'off',
+      },
+    },
+    {
       extends: ['plugin:jest/recommended', 'plugin:jest/style'],
       files: [
         '**/test/**/*.[jt]s?(x)',
-        '**/scripts/**/*.[jt]s?(x)',
         '**/?(*.)+(spec|test).[jt]s?(x)',
         '**/__mocks__/**/*[.jt]s?(x)',
-        '*.config.js',
       ],
       env: {
         jest: true,
@@ -141,12 +154,5 @@ module.exports = {
         'no-console': 'off',
       },
     },
-    {
-      files: ['infrastructure/**/*.[jt]s'],
-      rules: {
-        // Infrastructure packages will be installed and imported as devDependencies
-        'import/no-extraneous-dependencies': 'off',
-      },
-    }
   ],
 }
