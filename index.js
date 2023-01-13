@@ -119,21 +119,6 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        '*.config.js',
-        '**/scripts/**/*.[jt]s',
-        'dangerfile.[jt]s',
-        'danger/**/*.[jt]s',
-        'infrastructure/**/*.[jt]s',
-      ],
-      rules: {
-        // devDependencies do need to be imported in config/scripts
-        'import/no-extraneous-dependencies': 'off',
-        // Logging is fine in config/scripts
-        'no-console': 'off',
-      },
-    },
-    {
       extends: ['plugin:jest/recommended', 'plugin:jest/style'],
       files: [
         '**/test/**/*.[jt]s?(x)',
@@ -151,6 +136,21 @@ module.exports = {
         // It's useful to not have assertions in smoke/crash tests
         'jest/expect-expect': 'off',
         // Logging is fine in tests and scripts
+        'no-console': 'off',
+      },
+    },
+    {
+      files: [
+        '*.config.js',
+        '**/scripts/**/*.[jt]s',
+        'dangerfile.[jt]s',
+        'danger/**/*.[jt]s',
+        'infrastructure/**/*.[jt]s',
+      ],
+      rules: {
+        // devDependencies do need to be imported in config/scripts
+        'import/no-extraneous-dependencies': 'off',
+        // Logging is fine in config/scripts
         'no-console': 'off',
       },
     },
