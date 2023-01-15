@@ -3,6 +3,9 @@ const {
 } = require('.')
 
 module.exports = {
+  parserOptions: {
+    project: "./tsconfig.json"
+  },
   overrides: [
     {
       files: ["**/*.ts?(x)"],
