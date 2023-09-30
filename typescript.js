@@ -13,6 +13,7 @@ module.exports = {
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/stylistic-type-checked',
         'airbnb-typescript',
       ],
       rules: {
@@ -40,7 +41,7 @@ module.exports = {
             tuples: 'always-multiline',
           },
         ],
-        // Ver broken for some types, so ignoring them makes certain TS-only constructs look nicer
+        // Very broken for some types, so ignoring them makes certain TS-only constructs look nicer
         '@typescript-eslint/indent': [
           'error',
           2,
