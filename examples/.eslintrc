@@ -1,0 +1,6 @@
+{
+  "extends": ["..", "../typescript"],
+  "parserOptions": {
+    "project": "./examples/tsconfig.json"
+  }
+}
