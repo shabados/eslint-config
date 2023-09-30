@@ -74,7 +74,9 @@ module.exports = {
           },
         ],
         // Can be visually verbose to have every class member separated with a newline
-        "@typescript-eslint/lines-between-class-members": "off"
+        '@typescript-eslint/lines-between-class-members': 'off',
+        // Without this, TS path alias imports report missing file extension
+        'import/extensions': rules[ 'import/extensions' ],
       },
     },
     {
