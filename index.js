@@ -8,29 +8,28 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2022,
   },
-  extends: ['airbnb', 'airbnb/hooks'],
-  plugins: ['simple-import-sort', 'workspaces'],
+  extends: [ 'airbnb', 'airbnb/hooks' ],
+  plugins: [ 'simple-import-sort', 'workspaces' ],
   rules: {
     // Spacing in brackets is consistent and readable
-    'array-bracket-spacing': ['error', 'always'],
+    'array-bracket-spacing': [ 'error', 'always' ],
     // Spacing in brackets is consistent and readable
-    'computed-property-spacing': ['error', 'always'],
+    'computed-property-spacing': [ 'error', 'always' ],
     // Spacing in brackets is consistent and readable
     'space-in-parens': [
       'error',
       'always',
       {
-        exceptions: ['empty'],
+        exceptions: [ 'empty' ],
       },
     ],
     // Allow line breaks inside function parameters to enhance readability vs line length
-    'function-paren-newline': ['error', 'multiline-arguments'],
+    'function-paren-newline': [ 'error', 'multiline-arguments' ],
     // Doesn't really help to check if the module is on the filesystem, and can harm when using Docker etc: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
     'import/no-unresolved': 'off',
     // Do not require .js/ts extensions, except for .json
     'import/extensions': [
       'error',
-      'never',
       {
         json: 'always',
       },
@@ -57,7 +56,7 @@ module.exports = {
     ],
     // Sometimes you want the side-effects that constructing something will cause
     'no-new': 'off',
-    // No unused variables except when prepended with _, to indicate that they're not to be used, but require definition to be valid code
+    // No unused variables except when prepended with _ to indicate that they're unused but required
     'no-unused-vars': [
       'error',
       {
@@ -91,16 +90,17 @@ module.exports = {
     // In TypeScript projects, validating prop types has low utility
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    // No need to sort methods in class components, and it can sometimes mess with member and function declarations
+    // No need to sort methods in class components and it can mess with member/function declarations
     'react/sort-comp': 'off',
     // There's no point disabling prop spreading, it can be useful if not abused
     'react/jsx-props-no-spreading': 'off',
     // Allow components to be rendered as inline functions to allow for render prop pattern
-    'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
+    'react/no-unstable-nested-components': [ 'error', { allowAsProps: true } ],
     // Semi colons are visual garbage
-    semi: ['error', 'never'],
-    // For the few semi-colons required (e.g. inline array operations), place them at the beginning of the statement
-    'semi-style': ['error', 'first'],
+    semi: [ 'error', 'never' ],
+    // When semi-colons are required (e.g. inline array operations)
+    // place them at the start of statement
+    'semi-style': [ 'error', 'first' ],
     // Prefer passing in ES6 default values to function components (ideal solution resolve #113)
     'react/require-default-props': 'off',
     // Prefer arrow functions for all React functional components
@@ -119,7 +119,7 @@ module.exports = {
   },
   overrides: [
     {
-      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
+      extends: [ 'plugin:jest/recommended', 'plugin:jest/style' ],
       files: [
         '**/test/**/*.[jt]s?(x)',
         '**/?(*.)+(spec|test).[jt]s?(x)',

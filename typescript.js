@@ -1,21 +1,22 @@
 const {
-  overrides: [testOverrides, ...overrides],
-} = require('.')
+  rules,
+  overrides: [ testOverrides, ...overrides ],
+} = require( '.' )
 
 module.exports = {
   parserOptions: {
-    project: "./tsconfig.json"
+    project: './tsconfig.json',
   },
   overrides: [
     {
-      files: ["**/*.ts?(x)"],
+      files: [ '**/*.ts?(x)' ],
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'airbnb-typescript',
       ],
       rules: {
-        // No unused variables except when prepended with _, to indicate that they're not to be used, but require definition to be valid code
+        // No unused variables except when prepended with _ to indicate they're unused but required
         '@typescript-eslint/no-unused-vars': [
           'error',
           {
@@ -39,27 +40,27 @@ module.exports = {
             tuples: 'always-multiline',
           },
         ],
-        // @typescript-eslint/indent rules are very broken for some types, so ignoring them makes certain TS-only constructs look nicer
-        "@typescript-eslint/indent": [
-          "error",
+        // Ver broken for some types, so ignoring them makes certain TS-only constructs look nicer
+        '@typescript-eslint/indent': [
+          'error',
           2,
           {
-            "ignoredNodes": [
-              "TSUnionType",
-              "TSIntersectionType",
-              "PropertyDefinition[decorators]",
-              "TSTypeParameterInstantiation"
-            ]
-          }
+            ignoredNodes: [
+              'TSUnionType',
+              'TSIntersectionType',
+              'PropertyDefinition[decorators]',
+              'TSTypeParameterInstantiation',
+            ],
+          },
         ],
         // Let Typescript infer the return types
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         // Sometimes you want to declare a function as async so that it returns a Promisified value
         '@typescript-eslint/require-await': 'off',
         // Use types throughout, not interfaces
-        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        '@typescript-eslint/consistent-type-definitions': [ 'error', 'type' ],
         // Semi colons are visual garbage
-        '@typescript-eslint/semi': ['error', 'never'],
+        '@typescript-eslint/semi': [ 'error', 'never' ],
         // Typescript types should be delimeted by commas, not semi-colons
         '@typescript-eslint/member-delimiter-style': [
           'error',
