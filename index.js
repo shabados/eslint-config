@@ -27,11 +27,14 @@ module.exports = {
     'function-paren-newline': [ 'error', 'multiline-arguments' ],
     // Doesn't really help to check if the module is on the filesystem, and can harm when using Docker etc: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
     'import/no-unresolved': 'off',
-    // Do not require .js/ts extensions, except for .json
+    // Do not require .js/ts extensions, except for .json and asset file types
     'import/extensions': [
       'error',
       {
         json: 'always',
+        png: 'always',
+        jpg: 'always',
+        mp4: 'always',
       },
     ],
     // Preferable, but the author should know best for the situation
