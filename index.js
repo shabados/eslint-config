@@ -122,7 +122,6 @@ module.exports = {
   },
   overrides: [
     {
-      extends: [ 'plugin:jest/recommended', 'plugin:jest/style' ],
       files: [
         '**/test/**/*.[jt]s?(x)',
         '**/?(*.)+(spec|test).[jt]s?(x)',
@@ -136,8 +135,6 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // Requiring in local scopes is useful in tests
         'global-require': 'off',
-        // It's useful to not have assertions in smoke/crash tests
-        'jest/expect-expect': 'off',
         // Logging is fine in tests and scripts
         'no-console': 'off',
       },
