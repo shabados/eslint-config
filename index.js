@@ -37,6 +37,12 @@ module.exports = {
         mp4: 'always',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        packageDir: [ '.', '../..' ],
+      },
+    ],
     // Preferable, but the author should know best for the situation
     'import/prefer-default-export': 'off',
     // jsx-a11y is not valid for our use-cases
