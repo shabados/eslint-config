@@ -144,8 +144,8 @@ module.exports = {
     },
     {
       files: [
-        '*.config.js',
-        '**/scripts/**/*.[jt]s',
+        '*.config.?(c|m)[jt]s',
+        '**/scripts/**/*.?(c|m)[jt]s',
         'dangerfile.[jt]s',
         'danger/**/*.[jt]s',
         'infrastructure/**/*.[jt]s',
