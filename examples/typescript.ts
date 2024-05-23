@@ -15,8 +15,8 @@ type GenericType<
 > = { [key in T]: U }
 
 const generic:GenericType<typeof string, 1> = {
-  hi: 1,
   ...data,
+  hi: 1,
 }
 
 export default generic
