@@ -13,7 +13,8 @@
   },
   "homepage": "https://github.com/shabados/eslint-config#readme",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "eslint examples"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.10.0",
